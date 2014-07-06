@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: sc8_book_club_production
-  username: sc8_book_club
-  password: <%= ENV['SC8_BOOK_CLUB_DATABASE_PASSWORD'] %>
