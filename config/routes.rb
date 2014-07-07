@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'books#index'
+
   resources :books, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:create]
   end

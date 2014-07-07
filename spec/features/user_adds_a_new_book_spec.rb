@@ -17,7 +17,7 @@ feature 'user adds a new book', %Q(
   end
 
   scenario 'user successfully adds a new book' do
-    book = FactoryGirl.create(:book)
+    book = FactoryGirl.build(:book)
 
     fill_in 'Title',        with: book.title
     fill_in 'Author',       with: book.author
@@ -38,7 +38,32 @@ feature 'user adds a new book', %Q(
     click_on 'Create Book'
 
     expect(page).to_not have_content 'Success'
-    expect(page).to have_content "can't be blank"
+    # you might want to test that you have can't be blank errors for each required attribute.
+    # e.g.:
+    within '.book_title' do
+      expect(page).to have_content "can't be blank"
+    end
+
+    within '.book_author' do
+      expect(page).to have_content "can't be blank"
+    end
+
+    within '.book_year' do
+      expect(page).to have_content "can't be blank"
+    end
   end
 
+  scenario 'user submits duplicate book' do
+    book = FactoryGirl.create(:book)
+
+    fill_in 'Title',        with: book.title
+    fill_in 'Author',       with: book.author
+    fill_in 'Year',         with: book.year
+    fill_in 'Description',  with: book.description
+    fill_in 'Category',     with: book.category
+    click_on 'Create Book'
+
+    expect(page).to_not have_content 'Success'
+    expect(page).to have_content 'already been taken'
+  end
 end
