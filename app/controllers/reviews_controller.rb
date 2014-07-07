@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = 'Success'
       redirect_to book_path(@book)
     else
-      flash.now[:notice] = "Error"
+      flash.now[:notice] = 'Error'
       render 'books/show'
     end
   end

@@ -1,6 +1,13 @@
 body {
-  font-family: 'Futura', 'san-serif';
-  font-size: 12px;
+  font-family: 'Consolas', 'san-serif';
+  font-size: 14px;
+  background: #EFDBC5;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+thead {
+  font-weight: bold;
 }
 
 /*========Navigation==================*/
@@ -16,8 +23,11 @@ body {
 }
 
 .nav-bar {
-  background: #1FCECB;
-  font-size: 14px;
+  background: #FF496C;
+  font-size: 16px;
+  padding-top: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .nav > li > a {
@@ -29,9 +39,29 @@ body {
 
 #title {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .list {
   float: right;
+  font-size: 14px;
 }
+
+/*========Simple Form==================*/
+
+.simple_form div.input {
+  margin-bottom: 10px;
+  clear: both; /* Required for Webkit, but not for Gecko */
+}
+
+.simple_form label {
+  float: left;
+  width: 110px;
+  text-align: right;
+  margin: 2px 10px;
+}
+
+div.boolean, .simple_form input[type='submit'] {
+  margin-left: 90px;
+}
+
