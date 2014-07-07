@@ -7,6 +7,8 @@ group :development, :test do
   gem 'capybara'
 end
 
+gem 'simple_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
