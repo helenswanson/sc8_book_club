@@ -40,4 +40,5 @@ feature 'user adds a new book', %Q(
     expect(page).to_not have_content 'Success'
     expect(page).to have_content "can't be blank"
   end
+
 end

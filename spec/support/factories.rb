@@ -11,6 +11,6 @@ FactoryGirl.define do
     rating 5
     body 'This is a review.'
 
-    book_id 1
+    book
   end
 end

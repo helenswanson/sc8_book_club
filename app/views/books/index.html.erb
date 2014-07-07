@@ -1,0 +1,18 @@
+<h1>Book List</h1>
+
+<table border="1" style="width:400px">
+  <thead>
+    <tr>
+      <td>Title</td>
+      <td>Author</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title, book_path(book) %></td>
+        <td><%= book.author %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table><br/>
