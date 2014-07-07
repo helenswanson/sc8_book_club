@@ -1,0 +1,37 @@
+body {
+  font-family: 'Futura', 'san-serif';
+  font-size: 12px;
+}
+
+/*========Navigation==================*/
+
+.nav {
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  list-style: none;
+}
+
+.nav-bar {
+  background: #1FCECB;
+  font-size: 14px;
+}
+
+.nav > li > a {
+  display: block;
+  padding: 4px;
+  color: #000000;
+  text-decoration: none;
+}
+
+#title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.list {
+  float: right;
+}
