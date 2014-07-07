@@ -6,3 +6,25 @@
   <li>Description: <%= @book.description %></li>
   <li>Category: <%= @book.category %></li>
 </ul>
+
+<h2>Reviews</h2>
+<div>
+  <ul>
+    <% @book.reviews.each do |review| %>
+      <li>
+        Rating: <%= review.rating %><br/>
+        Body: <%= review.body %>
+      </li>
+    <% end %>
+  </ul>
+</div><br/>
+
+<h2>Add a New Review</h2>
+<div>
+  <%= simple_form_for([@book, @review]) do |f| %>
+    <%= f.input :rating, label: 'Rating (1 low - 5 high)' %>
+    <%= f.input :body %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
