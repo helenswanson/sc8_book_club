@@ -16,15 +16,18 @@ feature 'user adds a new review', %Q(
   #   visit book_path(@book)
   # end
 
+  before :each do
+    @book = FactoryGirl.create(:book)
+    visit book_path(@book)
+  end
+
   context 'user completes required fields' do
-
-    scenario 'user successfully adds a new review' do
-      @book = FactoryGirl.create(:book)
-      visit book_path(@book)
-
+    before :each do
       @review = FactoryGirl.create(:review)
       fill_in 'Body', with: @review.body
+    end
 
+    scenario 'user successfully adds a new review' do
       fill_in 'Rating', with: @review.rating
       click_on 'Create Review'
 
@@ -34,12 +37,6 @@ feature 'user adds a new review', %Q(
     end
 
     scenario 'user enters invalid rating' do
-      @book = FactoryGirl.create(:book)
-      visit book_path(@book)
-
-      @review = FactoryGirl.create(:review)
-      fill_in 'Body', with: @review.body
-
       fill_in 'Rating', with: 7
       click_on 'Create Review'
 
@@ -49,9 +46,6 @@ feature 'user adds a new review', %Q(
   end
 
   scenario 'user enters incomplete review information' do
-    @book = FactoryGirl.create(:book)
-    visit book_path(@book)
-
     click_on 'Create Review'
 
     expect(page).to_not have_content 'Success'
