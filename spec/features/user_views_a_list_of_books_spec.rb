@@ -9,7 +9,6 @@ feature 'user views a list of books', %Q(
 # Acceptance Criteria:
 # * I must see all the books added.
 # * Each book must link to the show page for that book.
-# * TODO book list pagination
 
   scenario 'user views a list of book names' do
     books = FactoryGirl.create_list(:book, 3)
