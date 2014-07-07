@@ -38,7 +38,18 @@ feature 'user adds a new book', %Q(
     click_on 'Create Book'
 
     expect(page).to_not have_content 'Success'
-    expect(page).to have_content "can't be blank"
-  end
+    # you might want to test that you have can't be blank errors for each required attribute.
+    # e.g.:
+    within '.book_title' do
+      expect(page).to have_content "can't be blank"
+    end
 
+    within '.book_author' do
+      expect(page).to have_content "can't be blank"
+    end
+
+    within '.book_year' do
+      expect(page).to have_content "can't be blank"
+    end
+  end
 end
